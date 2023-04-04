@@ -9,24 +9,41 @@
 }
 
 :root {
-  --primary-color: #f9b64d;
+  --primary-color: url(../cover.png);
+  
 }
 
 body {
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
-  line-height: 1.5;
   color: #333;
-  background: #f4f4f4;
+  background: #fff
 }
 
 /* Navbar */
 .navbar {
-  background: #333;
-  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(54, 139, 84, 0);
+  color: #61b535;
   padding: 1rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(20px);
+  box-shadow: 4px 5px 17px -4px #d3d3d3;
+}
+
+.navbar img {
+  width: 3rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.logo {
+  display: flex;
   align-items: center;
 }
 
@@ -40,9 +57,9 @@ body {
 }
 
 .navbar a {
-  color: #fff;
+  color: #61b535;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .navbar a:hover {
@@ -58,7 +75,7 @@ body {
 
 .showcase h1 {
   font-size: 2.5rem;
-  color: #333;
+  color: #368b54;
   text-align: center;
   padding: 1rem 0;
 }
@@ -81,21 +98,57 @@ form select {
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-bottom: 1rem;
+  background-color: #ddfee4;
+}
+
+.showcase form select {
+  font-size: 20px;
+  width: 500px;
+  max-width: 500px;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 1rem;
 }
 
 form button {
-  font-size: 20px;
-  padding: 1rem 2rem;
+  padding: 1em 2em;
   border: none;
   border-radius: 5px;
-  background: #333;
-  color: #fff;
-  cursor: pointer;
-  margin-top: 20px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #40d3a8;
+  transition: all 1000ms;
+  font-size: 15px;
+  position: relative;
+  overflow: hidden;
+  background-color: #ddfee4;
+  outline: 2px solid #40d3a8;
 }
 
 form button:hover {
+  color: #ddfee4;
   transform: scale(1.1);
+  outline: 2px solid #40d3a8;
+  box-shadow: 4px 5px 17px -4px #268391;
+}
+
+form button::before {
+  content: "";
+  position: absolute;
+  left: -50px;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: #61b535;
+  transform: skewX(45deg);
+  z-index: -1;
+  transition: width 1000ms;
+}
+
+form button:hover::before {
+  width: 250%;
 }
 
 /* Image */

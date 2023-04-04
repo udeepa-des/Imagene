@@ -49,11 +49,11 @@ async function generateImageRequest(prompt, size) {
 }
 
 function showSpinner() {
-    document.querySelector('.spinner').classList.add('show');
+    document.querySelector('.frame').classList.add('show');
 }
 
 function removeSpinner() {
-    document.querySelector('.spinner').classList.remove('show');
+    document.querySelector('.frame').classList.remove('show');
 }
 
 document.querySelector('#image-form').addEventListener('submit', onsubmit);
